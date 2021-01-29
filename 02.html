@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <script src="app.js" defer></script>
+    <style>
+      canvas {
+        background: #eee;
+      }
+      .color-btn {
+        width: 30px;
+        height: 30px;
+        border: 0;
+        border-radius: 50%;
+      }
+
+      /* 
+      CSS 특성 선택자는 주어진 특성의 존재 여부나 그 값에 따라 요소를 선택합니다. 
+
+      [attr]{} 
+      : attr이라는 이름의 특성을 가진 요소를 선택합니다.
+
+      [attr=value]{}
+      : attr이라는 이름의 특성값이 정확히 value인 요소를 선택합니다.
+      */
+      .color-btn[data-color="black"] {
+        background-color: black;
+      }
+      .color-btn[data-color="red"] {
+        background-color: red;
+      }
+      .color-btn[data-color="green"] {
+        background-color: green;
+      }
+      .color-btn[data-color="blue"] {
+        background-color: blue;
+      }
+      .image-btn {
+        width: 40px;
+        height: 40px;
+        background: url(./images/ilbuni2.png) no-repeat 50% 50% / cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image</h1>
+    <canvas class="canvas" width="600" height="400">
+      이 브라우저는 캔버스를 지원하지 않습니다.
+    </canvas>
+    <div class="control">
+      <button class="color-btn" data-type="color" data-color="black"></button>
+      <button class="color-btn" data-type="color" data-color="red"></button>
+      <button class="color-btn" data-type="color" data-color="green"></button>
+      <button class="color-btn" data-type="color" data-color="blue"></button>
+      <button class="image-btn" data-type="image"></button>
+    </div>
+    <button class="save-btn">이미지 저장</button>
+    <div class="result-image"></div>
+  </body>
+</html>
